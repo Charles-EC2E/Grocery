@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Example</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>=
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
             </div>
         </div>

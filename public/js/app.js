@@ -1936,7 +1936,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -1946,7 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
     this.fillData();
   },
   methods: {
-    fillData: function fillData() {// Récuperer les données dans le Back (Laravel) en passant par une route
+    fillData: function fillData() {// Appeler un route pour récupérer les données
     }
   }
 });
@@ -19620,10 +19619,6 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [
               _vm._v("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v("Go somewhere")
             ])
           ])
         ])
