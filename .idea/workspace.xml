@@ -138,7 +138,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -177,7 +177,8 @@
       <workItem from="1606291275944" duration="10000" />
       <workItem from="1606291669212" duration="784000" />
       <workItem from="1606297220850" duration="1070000" />
-      <workItem from="1606301912287" duration="3799000" />
+      <workItem from="1606301912287" duration="4618000" />
+      <workItem from="1606430763228" duration="5546000" />
     </task>
     <servers />
   </component>
@@ -189,7 +190,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

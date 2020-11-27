@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,16 @@ class HomeController extends Controller
 
     public function getChartData(){
 
-        $result = 'ChartData';
+//        Cela aurais renvoyé toutes les données de la table donc cela pourrait être très lourd si la la table avait plus de données
+//        $products = Product::all();
 
-        return response()->json($result);
+//      Ici je récupère uniquement les produits qui sont des Fruits ou des légumes
+//      Si demain il y a de nouveaux types de produits, j'aurais toujours uniquement les fruits et les légumes
+        $products = Product::where('type', '=', 'Fruit')
+            ->orWhere('type', '=', 'Légume')
+            ->get();
+
+//      Je renvoie la liste de produits vers le front  (cf. response.data)
+        return response()->json($products);
     }
 }
