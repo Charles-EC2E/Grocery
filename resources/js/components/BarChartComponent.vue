@@ -47,20 +47,24 @@
                         productData.push(product.amount);
                     });
 
-                    // J'affiche les données de mes liste la console de votre navigateur
-                    console.log('productLabels :', productLabels);
-                    console.log('productData :', productData);
-                    // Inutile de le reproduire les console.log, c'est surtout pour vous aider ;-)
-
                     // J'alimente la donnée "barChartData" que l'on donne au <bar-chart> ligne 9
                     this.barChartData = {
                         datasets: [
                             {
                                 label: 'Quantité par produit',
                                 data: productData,
-                                backgroundColor: 'rgb(93,235,101)',
-                                borderColor: 'rgba(93,235,101, 1)',
-                                borderWidth: 2,
+                                backgroundColor: [
+                                    '#fc2605',
+                                    '#fc7805',
+                                    '#fc9f3c',
+                                    '#7bfc3f',
+                                    '#cefc00',
+                                    '#fcf800',
+                                    '#f400fc',
+                                    '#21fc00',
+                                    '#adfca6',
+                                    '#fc5305',
+                                ],
                             },
                         ],
                         labels: productLabels,

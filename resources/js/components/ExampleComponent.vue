@@ -4,7 +4,7 @@
             <bar-chart-component :title="'BarChart'"></bar-chart-component>
         </div>
         <div class="col-md-6">
-            <!-- PieChartComponent-->
+            <pie-chart-component :title="'PieChart'"></pie-chart-component>
         </div>
     </div>
 
@@ -12,9 +12,10 @@
 
 <script>
     import BarChartComponent from './BarChartComponent.vue'
+    import PieChartComponent from './PieChartComponent.vue'
 
     export default {
-        components: {BarChartComponent},
+        components: {BarChartComponent, PieChartComponent},
         data() {
             return {
 
