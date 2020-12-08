@@ -18,10 +18,14 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "beegridtable": "^1.1.4",
         "bootstrap": "^4.5.3",
+        "bootstrap-vue": "^2.20.1",
         "chart.js": "^2.9.4",
+        "gridjs-vue": "^3.0.2",
         "vue": "^2.6.12",
         "vue-axios": "^3.2.0",
-        "vue-chartjs": "^3.5.1"
+        "vue-chartjs": "^3.5.1",
+        "vue-table-dynamic": "^0.3.3"
     }
 }
