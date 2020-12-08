@@ -4,8 +4,12 @@
             {{title}}
         </div>
         <div class="card-body">
+
             <!--       Les données du graphiques -->
             <bar-chart :chart-data="barChartData" :height="200" :options="barChartOptions"></bar-chart>
+        </div>
+        <div class="col-md-6 mx-auto text-center">
+            <button @click="randomData()">Randomize</button>
         </div>
     </div>
 </template>
@@ -71,6 +75,62 @@
                     };
                 })
             },
+
+            randomData () {
+                // Appeler un route pour récupérer les données
+                this.axios.get(`/dashboard`).then((response) => {
+                    // response.data = La liste des produits renvoyé par la fonction "getChartData" dans le "HomeController"
+
+                    // Je créé deux tableaux
+                    let productLabels = []; // Pour la liste des labels
+                    let productData = [];   // Pour la liste des data
+
+                    // Je boucle sur la liste de produits pour remplir mes deux listes
+                    response.data.forEach( product => {
+                        productLabels.push(product.name);
+                        productData.push(product.amount);
+                    });
+
+                    // J'alimente la donnée "barChartData" que l'on donne au <bar-chart> ligne 9
+                    this.barChartData = {
+                        datasets: [
+                            {
+                                label: 'Quantité par produit',
+                                data: [
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                    this.getRandomInt(),
+                                this.getRandomInt(),
+                                ],
+                                
+                                backgroundColor: [
+                                    '#fc2605',
+                                    '#fc7805',
+                                    '#fc9f3c',
+                                    '#7bfc3f',
+                                    '#cefc00',
+                                    '#fcf800',
+                                    '#f400fc',
+                                    '#21fc00',
+                                    '#adfca6',
+                                    '#fc5305',
+                                ],
+                            },
+                        ],
+                        labels: productLabels,
+                    };
+                })
+            },
+
+            getRandomInt () {
+                return Math.floor(Math.random() * 100);
+            }
         }
     }
 </script>

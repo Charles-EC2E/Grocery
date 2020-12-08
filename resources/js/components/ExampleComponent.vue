@@ -7,7 +7,6 @@
             <pie-chart-component :title="'PieChart'"></pie-chart-component>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -18,14 +17,11 @@
         components: {BarChartComponent, PieChartComponent},
         data() {
             return {
-
             }
         },
         mounted() {
-
         },
         methods: {
-
         }
     }
 </script>
