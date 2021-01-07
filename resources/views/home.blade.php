@@ -25,8 +25,37 @@
     <h1>Home page</h1>
         <div id="app">
             <example-component></example-component>
+            <br>
+
+            <div class="row">
+                <div class="col-4">
+                  <div class="list-group" id="list-tab" role="tablist">
+                    @php ($i = 1)
+                    @foreach ($types as $type)
+                        <a class="list-group-item list-group-item-action @if ($i == 1)active @endif" id="list-home-list" data-toggle="list" href="#list-{{ $type->type }}" role="tab" aria-controls="{{ $type->type }}">{{ $type->type }}</a>
+                        @php ($i = $i + 1)
+                    @endforeach
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="tab-content" id="nav-tabContent">
+                    @php ($i = 1)
+                    @foreach ($types as $type)
+                        <div class="tab-pane fade show @if ($i == 1)active @endif" id="list-{{ $type->type }}" role="tabpanel" aria-labelledby="list-{{ $type->type }}-list">
+                            <div id="averagePrice">{{ $type->type }} : Son prix moyen est de {{ avgPrice }}€ à l'unité.</div>
+                        </div>
+                        @php ($i = $i + 1)
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            <button type="button" class="btn btn-primary">Delete</button>
         </div>
 
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="http://localhost:8098"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>

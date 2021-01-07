@@ -19,11 +19,18 @@ class HomeController extends Controller
 
 //      Ici je récupère uniquement les produits qui sont des Fruits ou des légumes
 //      Si demain il y a de nouveaux types de produits, j'aurais toujours uniquement les fruits et les légumes
+//      J'ai ajouté de la viande (de luxe, biensûr)
         $products = Product::where('type', '=', 'Fruit')
             ->orWhere('type', '=', 'Légume')
+            ->orWhere('type', '=', 'Viande')
             ->get();
 
 //      Je renvoie la liste de produits vers le front  (cf. response.data)
         return response()->json($products);
+    }
+
+    public function getAllTypes(){
+        
+        return Product::all(['type']);
     }
 }

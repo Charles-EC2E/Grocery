@@ -1935,7 +1935,8 @@ __webpack_require__.r(__webpack_exports__);
       // Pour ajouter des options à mon graphique, ici je n'en n'ajoute pas
       barChartOptions: {},
       // Pour les série de données à mettre dans le graphique
-      barChartData: {}
+      barChartData: {},
+      stockList: {}
     };
   },
   mounted: function mounted() {
@@ -1949,7 +1950,8 @@ __webpack_require__.r(__webpack_exports__);
       // Appeler un route pour récupérer les données
       this.axios.get("/dashboard").then(function (response) {
         // response.data = La liste des produits renvoyé par la fonction "getChartData" dans le "HomeController"
-        // Je créé deux tableaux
+        _this.stockList = response.data; // Je créé deux tableaux
+
         var productLabels = []; // Pour la liste des labels
 
         var productData = []; // Pour la liste des data
@@ -57731,7 +57733,7 @@ var render = function() {
         _c("bar-chart", {
           attrs: {
             "chart-data": _vm.barChartData,
-            height: 200,
+            height: 300,
             options: _vm.barChartOptions
           }
         })
@@ -70184,8 +70186,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Laragon\Projets\Grocery\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Laragon\Projets\Grocery\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! D:\wamp64\www\Grocery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\wamp64\www\Grocery\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

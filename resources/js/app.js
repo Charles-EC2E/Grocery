@@ -13,3 +13,11 @@ Vue.component('example-component', ExampleComponent);
 const app = new Vue({
     el: '#app'
 });
+
+// ?? :(
+var averagePrice = new Vue({
+    el: '#averagePrice',
+    data: {
+        avgPrice: 1
+    }
+});

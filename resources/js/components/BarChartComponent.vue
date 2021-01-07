@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <!--       Les données du graphiques -->
-            <bar-chart :chart-data="barChartData" :height="200" :options="barChartOptions"></bar-chart>
+            <bar-chart :chart-data="barChartData" :height="300" :options="barChartOptions"></bar-chart>
         </div>
     </div>
 </template>
@@ -24,7 +24,9 @@
                 // Pour ajouter des options à mon graphique, ici je n'en n'ajoute pas
                 barChartOptions: {},
                 // Pour les série de données à mettre dans le graphique
-                barChartData: {}
+                barChartData: {},
+
+                stockList : {}
             }
         },
         mounted() {
@@ -36,6 +38,8 @@
                 // Appeler un route pour récupérer les données
                 this.axios.get(`/dashboard`).then((response) => {
                     // response.data = La liste des produits renvoyé par la fonction "getChartData" dans le "HomeController"
+
+                    this.stockList = response.data;
 
                     // Je créé deux tableaux
                     let productLabels = []; // Pour la liste des labels
